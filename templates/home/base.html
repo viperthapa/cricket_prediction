@@ -1,0 +1,96 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>myhome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Frolic a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<link href="{% static 'home/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="{% static 'home/css/jquery.countdown.css' %}" />
+	<!--gallery -->
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/cm-overlay.css' %}" />
+	<!-- //gallery -->
+<link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}" />
+<link rel="stylesheet" href="{% static 'home/css/owl.theme.min.css' %}" />
+<link rel="stylesheet" href="{% static 'home/css/owl.transitions.css' %}" />
+<link href="{% static 'home/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'home/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lobster|Lobster+Two" rel="stylesheet">
+
+</head>
+<body>
+<div class="banner">
+<div class="w3_baner">
+<div class="content white agile-info" style="background-color: #1cc7d0;">
+			<nav class="navbar navbar-light" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+						<a class="navbar-brand" href="index.html">
+						<h1><span class="fa fa-futbol-o" aria-hidden="true"></span>MyCricket<h1>
+						</a>
+					</div>
+					<!--/.navbar-header-->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<nav class="link-effect-2" id="link-effect-2">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="{% url 'userapp:home' %}" class="effect-3">Home</a></li>
+								
+
+								{% if request.user.is_authenticated %}<li><a href="{% url 'scores:app1'%}" class="scroll effect-3">prediction</a></li>{% endif %}
+								{% if request.user.is_authenticated %}
+									<li><a href="/logout/" class="scroll effect-3">logout</a></li>
+
+								{% else %}
+									<li><a href="/login/" class="scroll effect-3">login</a></li>
+
+								{% endif %}
+
+								{% if request.user.is_authenticated %}
+									<p></p>
+								{% else %}
+									<li><a href="{% url 'userapp:register'%}" class="scroll effect-3">register</a></li>
+								{% endif %}
+
+
+								
+							</ul>
+						</nav>
+					</div>
+					<!--/.navbar-collapse-->
+					<!--/.navbar-->
+				</div>
+			</nav>
+
+            
+</div>
+<!-- banner -->
+
+
+	</div>
+	</div>
+	<!--//banner -->
+
+    {% block content %}
+    {% endblock %}
+<div class="wthree_footer" style="background-color: #1cc7d0;">
+	<p>© 2018 Frolic. All Rights Reserved | Design by <a href="#">cricket</a></p>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+{% extends 'home/base.html' %}
+[% load static %]
+{% load humanize %}
+
+{% block content %}
+<style>
+  .myclass{
+    background-color: whitesmoke;
+  }
+
+  .myform{
+    padding: 40px;
+
+  }
+</style>
+<div class="myclass">
+  <div class="myform row">
+    <form method="post">
+      {% csrf_token %}
+        <label for="innings_no" "class="input-inline">Enter 1 for 1st innings and 2 for 2nd:&nbsp;&nbsp;</label>
+        <input type="text" id="innings_no" name="innings_no" value = {{in}} class="input-inline"><br><br>
+
+        <label for="over_no" "class="input-inline">Enter the over number you want:&nbsp;&nbsp;</label>
+        <input type="text" id="over_no" name="over_no" value = {{on}} class="input-inline"><br><br>
+
+        <label for="runs" class="input-inline">runs:&nbsp;&nbsp;</label>
+        <input type="text" id="runs" name="runs" value = {{rn}} class="input-inline"><br><br>
+
+        <label for="wickets" class="input-inline">wickets:&nbsp;&nbsp;</label>
+        <input type="text" id="wickets" name="wickets" value = {{wk}} class="input-inline"><br><br>
+
+        <label for="target" "class="input-inline">target:&nbsp;&nbsp;</label>
+        <input type="text" id="target" name="target" value = {{tgt}} class="input-inline"><br><br>
+
+        <label for="avg_socre" class="input-inline">avg_socre:&nbsp;&nbsp;</label>
+        <input type="text" id="avg_socre" name="avg_socre" value = {{ag}} class="input-inline"><br><br>
+
+        <input class="btn btn-primary" id="submitButton" type="submit" value="Submit">
+
+        The result is {{result}}
+
+
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+{% endblock %}

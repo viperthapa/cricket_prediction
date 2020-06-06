@@ -1,0 +1,140 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<style>
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+	<form action="#" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		<div class="container"><br>
+		  <h1 style="text-align: center;">Register</h1>
+		  <hr>
+	  
+		  <label for="email"><b>Username</b></label>
+		  <p>{{ form.username }}</p>
+
+		  <label for="email"><b>password</b></label>
+		  <p>{{ form.password }}</p>
+
+		  <label for="email"><b>confirm password</b></label>
+		  <p>{{ form.confirm_password }}</p>
+
+		  <label for="email"><b>Name</b></label>
+		  <p>{{ form.name }}</p>
+
+		  <label for="email"><b>Mobile</b></label>
+		  <p>{{ form.mobile }}</p>
+
+
+
+		  
+
+		  <label for="email"><b>Address</b></label>
+		  <p>{{ form.address }}</p>
+
+		  <label for="email"><b>image</b></label>
+		  <p>{{ form.image }}</p>
+		  
+
+		  
+	  
+		  <hr>
+	  
+		  <button type="submit" class="registerbtn">Register</button>
+		</div>
+		
+		
+	  </form>
+	  
+<!--
+	<div style="background-color: lightblue;border: 2px;">
+		<br><h3 style="margin-left: 600px;">Signup Form</h3>
+		
+		<br>
+		
+		<div class="signup" style="margin:20px 200px 0px 560px ;">
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<p>username</p>
+					<p>{{ form.username }}</p>
+					<p>password</p>
+					<p>{{ form.password }}</p>
+					<p>confirm password</p>
+					<p>{{ form.confirm_password }}</p>
+					<p>name</p>
+					<p>{{ form.name }}</p>
+					<p>mobile</p>
+					<p>{{ form.mobile }}</p>
+					<p>email</p>
+					<p>{{ form.email }}</p>
+					<p>address</p>
+					<p>{{ form.address }}</p>
+
+					<p>image</p>
+					<p>{{ form.image }}</p>
+					<br>
+					<button class="btn btn-primary" style="width: 300px;">Register</button>
+					
+				
+				</form>
+
+		</div>
+	</div>
+ -->
+
+</div>
+{% endblock %}
+</html>
